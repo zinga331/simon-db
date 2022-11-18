@@ -40,7 +40,21 @@ if (!userName) {
 }
 ```
 
-This will require you to set these variables in your development and production environments before you can successfully execute.
+This will require you to set these variables in your development and production environments before you can successfully execute. For Linux systems you can add your credentials for all users by modifying the `/etc/environment` file
+
+```
+sudo vi /etc/environment
+```
+
+and adding the following environment exports.
+
+```
+export MONGOUSER=<yourmongodbusername>
+export MONGOPASSWORD=<yourmongodbpassword>
+export MONGOHOSTNAME=<yourmongodbhostname>
+```
+
+For your development environment add the variables to your shell's profile file.
 
 ## Study this code
 
