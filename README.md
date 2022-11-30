@@ -79,7 +79,7 @@ Get familiar with what this code teaches.
 - Change the footer link to point to your code repository. (e.g. https://github.com/yourname/simon-db)
 - Periodically deploy to your production environment using a copy of the `deploy.sh` script found in the [example class project](https://github.com/webprogramming260/simon-db/blob/main/deploy.sh). Take some time to understand how it works.
   ```sh
-  ./deploy.sh -k <yourpemkey> -h <yourdomain> -s simon-db -p 3001
+  ./deploy.sh -k <yourpemkey> -h <yourdomain> -s simon-db -p 3002
   ```
 - Update the simon-db repository README.md to record and reflect on what you are learning.
 - When you have completed your version. Do a final push of your code and deploy your final version to your production environment.
