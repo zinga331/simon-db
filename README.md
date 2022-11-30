@@ -61,6 +61,9 @@ For your development environment add the variables to your shell's profile file.
 Get familiar with what this code teaches.
 
 - Clone this repository to your development machine.
+  ```sh
+  git clone https://github.com/webprogramming260/simon-db.git
+  ```
 - Replace the database service URI with one from your Atlas cluster.
 - Review the code and get comfortable with everything it represents.
 - View the code in your browser by hosting it from a VS Code debug session.
