@@ -28,9 +28,9 @@ apiRouter.post('/score', async (req, res) => {
   res.send(scores);
 });
 
-// Redirect back to the home page if the path is unknown
+// Return the application's default page if the path is unknown
 app.use((_req, res) => {
-  res.redirect(`/`);
+  res.sendFile('index.html', { root: 'application' });
 });
 
 app.listen(port, () => {
