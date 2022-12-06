@@ -20,7 +20,7 @@ client.connect(err => {
 
 ```
 
-You can view this application running here: [Example Simon DB](https://demo.cs260.click/simon-db). Although you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved in the database.
+You can view this application running here: [Example Simon DB](https://simon-db.cs260.click). Although you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved in the database.
 
 ## Create a MongoDB Atlas cluster
 
