@@ -1,34 +1,37 @@
 # simon-db
 
-This demonstrates using a database service, MongoDB, to persistently save data. Our web service will call the database service to save high scores. This means that the Simon technology stack now has three layers.
+This demonstrates using a database service, MongoDB, to persistently save data. Our web service will call the database service to save high scores. This creates a third layer in our Simon technology stack.
 
 1. Client application - Simple HTML/CSS/JavaScript
 1. Web service - Caddy, Node.js, Express
 1. Database service - MongoDB
 
-The `simon-db` application starts where we left off with the `simon-service` application and then integrate with the database service. We use a cloud service called MongoDB Atlas for our database service. Once that is completed we can make service calls to MongoDB from our web service. This involves specifing the database service endpoint and making services calls like the following.
+The `simon-db` application starts where we left off with the `simon-service` application and then integrate with the database service. We use a cloud service called MongoDB Atlas for our database service. Once we are connected to Atlas, we can make service calls to MongoDB from our web service. This involves specifying the database service endpoint and making services calls like the following.
 
 ```Javascript
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://<user>:<password>@cluster0.2iaao.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+const { MongoClient } = require('mongodb');
+
+const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+const client = new MongoClient(url);
 client.connect(err => {
   const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
+
+  // ... perform actions on the collection object
+
   client.close();
 });
 
 ```
 
-You can view this application running here: [Example Simon DB](https://demo.cs260.click/simon-db). Although you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved in the database.
+You can view this application running here: [Example Simon DB](https://simon-db.cs260.click). Although you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved persistently in the database.
 
 ## Create a MongoDB Atlas cluster
 
-Before you can start writing your own code you need to get a MongoDB Atlas account and create a database cluster that you can use as your database service.
+Before you can start writing your own code you need to get a MongoDB Atlas account and create a database cluster that you can use as your database service. If you have not done that yet go back and review the instruction on data services.
 
 ## Handling credentials
 
-You now have credentials for accessing the database service. You need to protect those credentials. One common mistake is to check them into your code and then post it to a public GitHub repository. Instead you can read them from a secure location when your application executes. For this project we will read them from environment variables.
+You now have credentials for accessing the database service. You need to protect those credentials. One common mistake is to check them into your code and then post it to a public GitHub repository. Instead you can read them from a secure location when your application executes. For this project we will read them from environment variables. The JavaScript `process.env` object provides access the environment.
 
 ```Javascript
 const userName = process.env.MONGOUSER;
@@ -40,7 +43,7 @@ if (!userName) {
 }
 ```
 
-This will require you to set these variables in your development and production environments before you can successfully execute. For Linux systems you can add your credentials for all users by modifying the `/etc/environment` file
+This will require you to set these variables in your development and production environments before you can successfully execute. For your production environment, you can add your credentials for all users by modifying the `/etc/environment` file
 
 ```
 sudo vi /etc/environment
@@ -54,7 +57,7 @@ export MONGOPASSWORD=<yourmongodbpassword>
 export MONGOHOSTNAME=<yourmongodbhostname>
 ```
 
-For your development environment add the variables to your shell's profile file.
+For your development environment add the same export commands to your shell's profile file. Depending on what console you are using the location for your shell profile will be different. For example, on a Mac you typically are using Zsh and you will add the export commands to the `.zprofile` file found in your user directory.
 
 ## Study this code
 
@@ -64,7 +67,7 @@ Get familiar with what this code teaches.
   ```sh
   git clone https://github.com/webprogramming260/simon-db.git
   ```
-- Replace the database service URI with one from your Atlas cluster.
+- Set up your environment variables with your Atlas credentials.
 - Review the code and get comfortable with everything it represents.
 - View the code in your browser by hosting it from a VS Code debug session.
 - See how data is populated in the database by viewing the contents of the database using the MongoDB Atlas console.
