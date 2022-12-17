@@ -63,7 +63,7 @@ For your development environment add the same export commands to your shell's pr
 
 Get familiar with what this code teaches.
 
-- Clone this repository to your development machine.
+- Clone the repository to your development environment.
   ```sh
   git clone https://github.com/webprogramming260/simon-db.git
   ```
@@ -75,19 +75,26 @@ Get familiar with what this code teaches.
 
 ## Make your own version
 
-- Create a new GitHub repository named `simon-db`.
-- Clone the repository to your development environment.
-- In the `simon-db` repository create your own version of the project. Refer to the example class project repository if you get stuck.
+- Using VS Code, open the `simon` directory for the repository you used for the last Simon assignment.
+- Modify the project add database support using MongoDB. Refer to the example class project repository for guidance. Remember that you do not need to recreate an original work. Just focus on learning the concepts that the example project provides. However, you will learn more if you type everything out, and not just copy and paste the code.
+- Set the footer link to point to your code repository. (e.g. https://github.com/yourname/simon)
 - Periodically commit and push your code to your repository as you hit different milestones. (4 commits are required for full credit.)
-- Change the footer link to point to your code repository. (e.g. https://github.com/yourname/simon-db)
 - Periodically deploy to your production environment using a copy of the `deploy.sh` script found in the [example class project](https://github.com/webprogramming260/simon-db/blob/main/deploy.sh). Take some time to understand how it works.
+
   ```sh
-  ./deploy.sh -k <yourpemkey> -h <yourdomain> -s simon-db -p 3002
+  ./deploy.sh -k <yourpemkey> -h <yourdomain> -s simon -p 3000
   ```
-- Update the simon-db repository README.md to record and reflect on what you are learning.
-- When you have completed your version. Do a final push of your code and deploy your final version to your production environment.
-- Make sure your project is visible from your production environment (e.g. https://simon-db.yourhostname).
-- Submit the URL to your project on the production environment for grading using the Canvas assignment page.
+
+  For example,
+
+  ```sh
+  ./deploy.sh -k ~/keys/production.pem -h yourdomain.click -s simon -p 3000
+  ```
+
+- Update your `simon` repository README.md to record and reflect on what you learned.
+- When you have completed your version. Do a final push of your code and deploy to your production environment using the `deploy.sh` script.
+- Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
+- Submit the URL to your production environment for grading using the Canvas assignment page.
 
 ## Grading Rubric
 
