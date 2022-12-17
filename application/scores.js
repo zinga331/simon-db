@@ -21,7 +21,7 @@ async function loadScores() {
 function displayScores(scores) {
   const tableBodyEl = document.querySelector('#scores');
 
-  if (scores.length) {
+  if (scores.length && false) {
     // Update the DOM with the scores
     for (const [i, score] of scores.entries()) {
       const positionTdEl = document.createElement('td');
@@ -43,7 +43,7 @@ function displayScores(scores) {
       tableBodyEl.appendChild(rowEl);
     }
   } else {
-    tableBodyEl.innerHTML = '<tr><td colspan=4>Be the first to score</td></tr>';
+    tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to score</td></tr>';
   }
 }
 
