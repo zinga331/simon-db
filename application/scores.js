@@ -21,7 +21,7 @@ async function loadScores() {
 function displayScores(scores) {
   const tableBodyEl = document.querySelector('#scores');
 
-  if (scores.length && false) {
+  if (scores.length) {
     // Update the DOM with the scores
     for (const [i, score] of scores.entries()) {
       const positionTdEl = document.createElement('td');
