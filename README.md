@@ -1,6 +1,6 @@
 # simon-db
 
-This demonstrates using a database service, MongoDB, to persistently save data. Our web service will call the database service to save high scores. This creates a third layer in our Simon technology stack.
+This deliverable demonstrates using a database service, MongoDB, to persistently save data. Our web service will call the database service to save high scores. This creates a third layer in our Simon technology stack.
 
 1. Client application - Simple HTML/CSS/JavaScript
 1. Web service - Caddy, Node.js, Express
