@@ -76,7 +76,7 @@ Get familiar with what this code teaches.
 ## Make your own version
 
 - Using VS Code, open the `simon` directory for the repository you used for the last Simon assignment.
-- Modify the project add database support using MongoDB. Refer to the example class project repository for guidance. Remember that you do not need to recreate an original work. Just focus on learning the concepts that the example project provides. However, you will learn more if you type everything out, and not just copy and paste the code.
+- Modify the project add database support using MongoDB. Refer to the example class project repository for guidance. Remember that you do not need to create an original work. Just focus on learning the concepts that the example project provides. However, you will learn more if you type everything out, and not just copy and paste the code.
 - Set the footer link to point to your code repository. (e.g. https://github.com/yourname/simon)
 - Periodically commit and push your code to your repository as you hit different milestones. (4 commits are required for full credit.)
 - Periodically deploy to your production environment using a copy of the `deployService.sh` script found in the [example class project](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh). Take some time to understand how it works.
@@ -91,7 +91,7 @@ Get familiar with what this code teaches.
   ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon -p 3000
   ```
 
-- Update your `simon` repository README.md to record and reflect on what you learned.
+- Update your `start up` repository README.md to record and reflect on what you learned.
 - When you have completed your version. Do a final push of your code and deploy to your production environment using the `deployService.sh` script.
 - Make sure your project is visible from your production environment (e.g. https://simon.yourdomain.click).
 - Submit the URL to your production environment for grading using the Canvas assignment page.
