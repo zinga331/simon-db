@@ -102,4 +102,4 @@ Get familiar with what this code teaches.
 - 30% - Successfully created your MongoDB Atlas cluster
 - 30% - Web service storing information using the MongoDB database service
 - 10% - At least four Git commits for the project (Initial, milestone, ..., milestone, final)
-- 10% - Notes in your repository README.md about what you have learned
+- 10% - Notes in your start up repository README.md about what you have learned
