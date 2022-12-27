@@ -6,7 +6,7 @@ This deliverable demonstrates using a database service, MongoDB, to persistently
 1. Web service - Caddy, Node.js, Express
 1. Database service - MongoDB
 
-The `simon-db` application starts where we left off with the `simon-service` application and then integrate with the database service. We use a cloud service called MongoDB Atlas for our database service. Once we are connected to Atlas, we can make service calls to MongoDB from our web service. This involves specifying the database service endpoint and making services calls like the following.
+We use a cloud service called MongoDB Atlas for our database service. Once we are connected to Atlas, we can make service calls to MongoDB from our web service. This involves specifying the database service endpoint and making services calls like the following.
 
 ```Javascript
 const { MongoClient } = require('mongodb');
@@ -16,7 +16,7 @@ const client = new MongoClient(url);
 client.connect(err => {
   const collection = client.db("test").collection("devices");
 
-  // ... perform actions on the collection object
+  // ... perform actions on the DB collection
 
   client.close();
 });
@@ -76,7 +76,7 @@ Get familiar with what this code teaches.
 ## Make your own version
 
 - Using VS Code, open the `simon` directory for the repository you used for the last Simon assignment.
-- Modify the project add database support using MongoDB. Refer to the example class project repository for guidance. Remember that you do not need to create an original work. Just focus on learning the concepts that the example project provides. However, you will learn more if you type everything out, and not just copy and paste the code.
+- Modify the project and add database support using MongoDB. Refer to the example class project repository for guidance. Remember that you do not need to create an original work. Just focus on learning the concepts that the example project provides. However, you will learn more if you type everything out, and not just copy and paste the code.
 - Set the footer link to point to your code repository. (e.g. https://github.com/yourname/simon)
 - Periodically commit and push your code to your repository as you hit different milestones. (4 commits are required for full credit.)
 - Periodically deploy to your production environment using a copy of the `deployService.sh` script found in the [example class project](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh). Take some time to understand how it works.
