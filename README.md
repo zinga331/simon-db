@@ -82,13 +82,13 @@ Get familiar with what this code teaches.
 - Periodically deploy to your production environment using a copy of the `deployService.sh` script found in the [example class project](https://github.com/webprogramming260/simon-db/blob/main/deployService.sh). Take some time to understand how it works.
 
   ```sh
-  ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon -p 3000
+  ./deployService.sh -k <yourpemkey> -h <yourdomain> -s simon
   ```
 
   For example,
 
   ```sh
-  ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon -p 3000
+  ./deployService.sh -k ~/keys/production.pem -h yourdomain.click -s simon
   ```
 
 - Update your `start up` repository README.md to record and reflect on what you learned.
