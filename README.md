@@ -6,6 +6,10 @@ This deliverable demonstrates using a database service, MongoDB, to persistently
 1. Web service - Caddy, Node.js, Express
 1. Database service - MongoDB
 
+You can view this application running here: [Example Simon DB](https://simon-db.cs260.click). Although you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved persistently in the database.
+
+## Connecting to the database
+
 We use a cloud service called MongoDB Atlas for our database service. Once we are connected to Atlas, we can make service calls to MongoDB from our web service. This involves specifying the database service endpoint and making services calls like the following.
 
 ```Javascript
@@ -22,8 +26,6 @@ client.connect(err => {
 });
 
 ```
-
-You can view this application running here: [Example Simon DB](https://simon-db.cs260.click). Although you won't be able to see any difference from the `simon-service` version, because the only difference is that when the `simon-db` service is restarted it doesn't lose its high score data because it is saved persistently in the database.
 
 ## Create a MongoDB Atlas cluster
 
@@ -58,6 +60,10 @@ export MONGOHOSTNAME=<yourmongodbhostname>
 ```
 
 For your development environment add the same export commands to your shell's profile file. Depending on what console you are using the location for your shell profile will be different. For example, on a Mac you typically are using Zsh and you will add the export commands to the `.zprofile` file found in your user directory.
+
+## Working with the database
+
+The `database.js` file contains the functions for getting and adding high scores. The database functions are called from the `getScores` and `submitScores` endpoints found in `index.js`.
 
 ## Study this code
 
