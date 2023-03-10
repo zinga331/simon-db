@@ -138,6 +138,13 @@ footer a {
   background-color: #300;
 }
 
+td {
+  max-width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .center {
   top: 50%;
   left: 50%;
