@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const {MongoClient} = require('mongodb');
 
 const userName = process.env.MONGOUSER;
 const password = process.env.MONGOPASSWORD;
@@ -18,13 +18,13 @@ function addScore(score) {
 }
 
 function getHighScores() {
-  const query = {};
+  const query = {score: {$gt: 0}};
   const options = {
-    sort: { score: -1 },
+    sort: {score: -1},
     limit: 10,
   };
   const cursor = scoreCollection.find(query, options);
   return cursor.toArray();
 }
 
-module.exports = { addScore, getHighScores };
+module.exports = {addScore, getHighScores};

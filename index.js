@@ -23,14 +23,14 @@ apiRouter.get('/scores', async (_req, res) => {
 
 // SubmitScore
 apiRouter.post('/score', async (req, res) => {
-  await DB.addScore(req.body);
+  DB.addScore(req.body);
   const scores = await DB.getHighScores();
   res.send(scores);
 });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
+  res.sendFile('index.html', {root: 'public'});
 });
 
 app.listen(port, () => {
