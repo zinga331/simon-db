@@ -13,8 +13,9 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 const client = new MongoClient(url);
 const scoreCollection = client.db('simon').collection('score');
 
-function addScore(score) {
-  scoreCollection.insertOne(score);
+async function addScore(score) {
+  const result = await scoreCollection.insertOne(score);
+  return result;
 }
 
 function getHighScores() {
